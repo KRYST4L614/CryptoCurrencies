@@ -12,6 +12,8 @@ gson = "2.9.0"
 dagger = "2.51"
 ksp = "1.9.0-1.0.13"
 serialization = "1.6.3"
+coilVersion = "2.7.0"
+composeNavigation = "2.8.0-alpha08"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +34,9 @@ com-squareup-retrofit2-gson = { group = "com.squareup.retrofit2", name = "conver
 com-google-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
 com-google-dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization"}
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
+io-coil = {group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

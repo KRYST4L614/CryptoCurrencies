@@ -1,7 +1,7 @@
 package com.example.cryptocurrencies.di
 
 import android.content.Context
-import com.example.cryptocurrencies.MainActivity
+import com.example.cryptocurrencies.ui.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

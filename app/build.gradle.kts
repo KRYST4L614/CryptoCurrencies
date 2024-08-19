@@ -72,4 +72,6 @@ dependencies {
     ksp(libs.com.google.dagger.compiler)
     implementation(libs.com.squareup.retrofit2.gson)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.io.coil)
+    implementation(libs.androidx.navigation.compose)
 }

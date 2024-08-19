@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CryptoCurrencies</string>
+    <string name="crypto_currency_list_title">Список криптовалют</string>
+    <string name="rub">RUB</string>
+    <string name="usd">USD</string>
+    <string name="error_message">Произошла какая-то ошибка :(\nПопробуем снова?</string>
+    <string name="pull_to_refresh_error_messgae">Произошла ошибка при загрузке</string>
+    <string name="try_button">Попробовать</string>
+    <string name="description_title">Описание</string>
+    <string name="categories_title">Категории</string>
+    <string name="usd_price">$ %1$,.2f</string>
+    <string name="rub_price">₽ %1$,.2f</string>
+    <string name="percent">%1$.2f %%</string>
 </resources>
