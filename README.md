@@ -1,4 +1,4 @@
-https://github.com/user-attachments/assets/755710ca-d4a1-4761-9807-9697e2f98b8d
+https://github.com/user-attachments/assets/7b09cb1a-44eb-46ea-8886-718c1a8d1364
 
 ********* 
 - Выделенные задачи и предполагаемое время на их выполнение:
