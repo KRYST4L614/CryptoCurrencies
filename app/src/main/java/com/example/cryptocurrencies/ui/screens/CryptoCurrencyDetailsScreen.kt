@@ -26,6 +26,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -129,7 +130,10 @@ private fun ContentScreen(
         Text(
             modifier = Modifier.padding(bottom = 16.dp),
             text = state.description,
-            style = Typography.titleSmall
+            style = Typography.titleSmall.copy(
+                color = Color.Black,
+                fontWeight = FontWeight(400)
+            )
         )
 
         Text(
@@ -141,7 +145,10 @@ private fun ContentScreen(
         Text(
             modifier = Modifier.padding(bottom = 8.dp),
             text = state.categories,
-            style = Typography.titleSmall
+            style = Typography.titleSmall.copy(
+                color = Color.Black,
+                fontWeight = FontWeight(400)
+            )
         )
     }
 }

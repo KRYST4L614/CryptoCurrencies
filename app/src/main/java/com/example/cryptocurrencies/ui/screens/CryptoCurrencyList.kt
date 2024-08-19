@@ -76,7 +76,7 @@ fun CryptoListScreen(
         snackbarHost = {
             SnackbarHost(hostState = snackBarHostState) {
                 Snackbar(
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 38.dp),
+                    modifier = Modifier.padding(16.dp),
                     containerColor = MaterialTheme.colorScheme.error
                 ) {
                     Text(
