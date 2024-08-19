@@ -31,7 +31,7 @@ fun CryptoItem(
 ) {
     Row(
         modifier = modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .padding(vertical = 8.dp)
             .clickable {
                 onClick()
             },
@@ -39,6 +39,7 @@ fun CryptoItem(
     ) {
         AsyncImage(
             modifier = Modifier
+                .padding(start = 16.dp)
                 .clip(CircleShape)
                 .size(40.dp),
             model = cryptoCurrency.image,
@@ -67,6 +68,7 @@ fun CryptoItem(
         }
 
         Column(
+            modifier = Modifier.padding(end = 16.dp),
             horizontalAlignment = Alignment.End
         ) {
             Text(
