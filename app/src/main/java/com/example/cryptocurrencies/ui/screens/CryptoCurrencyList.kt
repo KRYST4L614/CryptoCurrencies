@@ -39,10 +39,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.cryptocurrencies.R
 import com.example.cryptocurrencies.domain.entities.CryptoCurrency
-import com.example.cryptocurrencies.presentation.currencylist.CurrencyListState.Content
-import com.example.cryptocurrencies.presentation.currencylist.CurrencyListState.Error
-import com.example.cryptocurrencies.presentation.currencylist.CurrencyListState.Loading
-import com.example.cryptocurrencies.presentation.currencylist.CurrencyListViewModel
+import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Content
+import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Loading
+import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListViewModel
 import com.example.cryptocurrencies.ui.components.Chip
 import com.example.cryptocurrencies.ui.components.CryptoItem
 import com.example.cryptocurrencies.ui.theme.Typography
@@ -52,7 +52,7 @@ import com.example.cryptocurrencies.ui.theme.Typography
 @Composable
 fun CryptoListScreen(
     modifier: Modifier = Modifier,
-    viewModel: CurrencyListViewModel = viewModel(),
+    viewModel: CryptoCurrencyListViewModel = viewModel(),
     onItemClick: (id: String, name: String, image: String) -> Unit
 ) {
     val usdCurrency = stringResource(id = R.string.usd)
@@ -180,7 +180,7 @@ private fun ContentScreen(
     onItemClick: (id: String, name: String, image: String) -> Unit,
     selectedCurrency: String,
     snackBarHostState: SnackbarHostState,
-    viewModel: CurrencyListViewModel
+    viewModel: CryptoCurrencyListViewModel
 ) {
     LazyColumn(
         modifier = modifier

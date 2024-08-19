@@ -1,22 +1,22 @@
-package com.example.cryptocurrencies.presentation.currencydetails
+package com.example.cryptocurrencies.presentation.cryptocurrencydetails
 
 import android.text.Html
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cryptocurrencies.domain.usecases.GetCryptoCurrencyDetailsById
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsState.Content
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsState.Error
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsState.Loading
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Content
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Loading
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class CurrencyDetailsViewModel @Inject constructor(
+class CryptoCurrencyDetailsViewModel @Inject constructor(
     private val getCryptoCurrencyDetailsById: GetCryptoCurrencyDetailsById,
 ) : ViewModel() {
-    private val _state: MutableStateFlow<CurrencyDetailsState> = MutableStateFlow(Loading)
-    val state: StateFlow<CurrencyDetailsState> = _state
+    private val _state: MutableStateFlow<CryptoCurrencyDetailsState> = MutableStateFlow(Loading)
+    val state: StateFlow<CryptoCurrencyDetailsState> = _state
 
     fun getCurrencyDetailsById(
         id: String

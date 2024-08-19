@@ -31,17 +31,17 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.cryptocurrencies.R
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsState.Content
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsState.Error
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsState.Loading
-import com.example.cryptocurrencies.presentation.currencydetails.CurrencyDetailsViewModel
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Content
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Loading
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsViewModel
 import com.example.cryptocurrencies.ui.theme.Typography
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CryptoDetailsScreen(
     modifier: Modifier = Modifier,
-    viewModel: CurrencyDetailsViewModel = viewModel(),
+    viewModel: CryptoCurrencyDetailsViewModel = viewModel(),
     id: String,
     name: String,
     image: String,
