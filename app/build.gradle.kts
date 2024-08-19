@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.googleDevtoolsKsp)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -66,4 +68,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.com.google.dagger)
+    ksp(libs.com.google.dagger.compiler)
+    implementation(libs.com.squareup.retrofit2.gson)
+    implementation(libs.kotlinx.serialization.json)
 }
