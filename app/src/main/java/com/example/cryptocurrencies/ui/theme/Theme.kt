@@ -25,7 +25,8 @@ private val LightColorScheme = lightColorScheme(
     secondary = Grey,
     onSecondary = GreyFont,
     tertiary = Pink40,
-    background = Color.White
+    background = Color.White,
+    error = NegativeColor
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
