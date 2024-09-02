@@ -41,6 +41,7 @@ import com.example.cryptocurrencies.R
 import com.example.cryptocurrencies.domain.entities.CryptoCurrency
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Content
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Initial
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Loading
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListViewModel
 import com.example.cryptocurrencies.ui.components.Chip
@@ -59,13 +60,6 @@ fun CryptoListScreen(
     val rubCurrency = stringResource(id = R.string.rub)
 
     var selectedCurrency by rememberSaveable { mutableStateOf(usdCurrency) }
-
-    var wasInitialLoad by rememberSaveable { mutableStateOf(false) }
-
-    if (!wasInitialLoad) {
-        viewModel.getCryptoCurrencyList(selectedCurrency)
-        wasInitialLoad = true
-    }
 
     val snackBarHostState = remember { SnackbarHostState() }
 
@@ -159,6 +153,10 @@ fun CryptoListScreen(
                         ) {
                             viewModel.getCryptoCurrencyList(selectedCurrency)
                         }
+                    }
+
+                    is Initial -> {
+                        viewModel.getCryptoCurrencyList(selectedCurrency)
                     }
                 }
             }

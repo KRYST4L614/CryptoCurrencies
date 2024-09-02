@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.cryptocurrencies.domain.usecases.GetCryptoCurrencyDetailsByIdUseCase
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Content
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Initial
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Loading
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +16,7 @@ import javax.inject.Inject
 class CryptoCurrencyDetailsViewModel @Inject constructor(
     private val getCryptoCurrencyDetailsById: GetCryptoCurrencyDetailsByIdUseCase,
 ) : ViewModel() {
-    private val _state: MutableStateFlow<CryptoCurrencyDetailsState> = MutableStateFlow(Loading)
+    private val _state: MutableStateFlow<CryptoCurrencyDetailsState> = MutableStateFlow(Initial)
     val state: StateFlow<CryptoCurrencyDetailsState> = _state
 
     fun getCurrencyDetailsById(

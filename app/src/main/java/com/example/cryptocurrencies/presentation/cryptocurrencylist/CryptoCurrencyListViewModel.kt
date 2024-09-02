@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.cryptocurrencies.domain.usecases.GetCryptoCurrencyListUseCase
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Content
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Initial
 import com.example.cryptocurrencies.presentation.cryptocurrencylist.CryptoCurrencyListState.Loading
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -17,7 +18,7 @@ class CryptoCurrencyListViewModel @Inject constructor(
     private var lastContentState: Content? = null
 
     private val _state: MutableStateFlow<CryptoCurrencyListState> =
-        MutableStateFlow(Loading)
+        MutableStateFlow(Initial)
 
     val state: StateFlow<CryptoCurrencyListState> = _state
 

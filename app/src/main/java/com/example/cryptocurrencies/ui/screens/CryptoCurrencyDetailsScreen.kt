@@ -34,6 +34,7 @@ import coil.compose.AsyncImage
 import com.example.cryptocurrencies.R
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Content
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Error
+import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Initial
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Loading
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsViewModel
 import com.example.cryptocurrencies.ui.theme.Typography
@@ -48,14 +49,6 @@ fun CryptoDetailsScreen(
     image: String,
     onBackClick: () -> Unit
 ) {
-    var wasInitialLoad by rememberSaveable {
-        mutableStateOf(false)
-    }
-    if (!wasInitialLoad) {
-        viewModel.getCurrencyDetailsById(id)
-        wasInitialLoad = true
-    }
-
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -99,6 +92,10 @@ fun CryptoDetailsScreen(
                         .padding(padding)
                         .fillMaxSize()
                 ) { viewModel.getCurrencyDetailsById(id) }
+            }
+
+            is Initial -> {
+                viewModel.getCurrencyDetailsById(id)
             }
         }
     }

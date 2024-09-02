@@ -1,6 +1,8 @@
 package com.example.cryptocurrencies.presentation.cryptocurrencydetails
 
 sealed interface CryptoCurrencyDetailsState {
+    data object Initial: CryptoCurrencyDetailsState
+
     data class Content(
         val description: String,
         val categories: String
