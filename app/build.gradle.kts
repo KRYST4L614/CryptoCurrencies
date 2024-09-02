@@ -44,10 +44,15 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
     }
 }
 
@@ -71,4 +76,9 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.io.coil)
     implementation(libs.androidx.navigation.compose)
+    testImplementation(libs.org.junit.jupiter.api)
+    testImplementation(libs.org.junit.jupiter.params)
+    testRuntimeOnly(libs.org.junit.jupiter.engine)
+    testImplementation(libs.org.mockito.kotlin)
+    testImplementation(libs.org.jetbrains.kotlinx.coroutines.test)
 }

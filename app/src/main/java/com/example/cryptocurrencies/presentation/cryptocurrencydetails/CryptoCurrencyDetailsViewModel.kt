@@ -3,7 +3,7 @@ package com.example.cryptocurrencies.presentation.cryptocurrencydetails
 import android.text.Html
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cryptocurrencies.domain.usecases.GetCryptoCurrencyDetailsById
+import com.example.cryptocurrencies.domain.usecases.GetCryptoCurrencyDetailsByIdUseCase
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Content
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Error
 import com.example.cryptocurrencies.presentation.cryptocurrencydetails.CryptoCurrencyDetailsState.Loading
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CryptoCurrencyDetailsViewModel @Inject constructor(
-    private val getCryptoCurrencyDetailsById: GetCryptoCurrencyDetailsById,
+    private val getCryptoCurrencyDetailsById: GetCryptoCurrencyDetailsByIdUseCase,
 ) : ViewModel() {
     private val _state: MutableStateFlow<CryptoCurrencyDetailsState> = MutableStateFlow(Loading)
     val state: StateFlow<CryptoCurrencyDetailsState> = _state

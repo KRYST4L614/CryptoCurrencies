@@ -4,7 +4,7 @@ import com.example.cryptocurrencies.domain.entities.CryptoCurrencyDetails
 import com.example.cryptocurrencies.domain.repositories.CryptoCurrencyDetailsRepository
 import javax.inject.Inject
 
-class GetCryptoCurrencyDetailsById @Inject constructor(
+class GetCryptoCurrencyDetailsByIdUseCase @Inject constructor(
     private val repository: CryptoCurrencyDetailsRepository
 ) {
     suspend operator fun invoke(id: String): Result<CryptoCurrencyDetails> {
