@@ -2,9 +2,9 @@ package com.example.cryptocurrencies.di
 
 import com.example.cryptocurrencies.data.CryptoCurrencyApiService
 import com.example.cryptocurrencies.data.repositories.CryptoCurrencyDetailsRepositoryImpl
-import com.example.cryptocurrencies.data.repositories.CryptoCurrencyRepositoryImpl
+import com.example.cryptocurrencies.data.repositories.CryptoCurrencyListRepositoryImpl
 import com.example.cryptocurrencies.domain.repositories.CryptoCurrencyDetailsRepository
-import com.example.cryptocurrencies.domain.repositories.CryptoCurrencyRepository
+import com.example.cryptocurrencies.domain.repositories.CryptoCurrencyListRepository
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -47,10 +47,10 @@ class DataModule {
         retrofit.create(CryptoCurrencyApiService::class.java)
 
     @Provides
-    fun provideCryptoCurrencyRepository(
+    fun provideCryptoCurrencyListRepository(
         apiService: CryptoCurrencyApiService
-    ): CryptoCurrencyRepository {
-        return CryptoCurrencyRepositoryImpl(Dispatchers.IO, apiService)
+    ): CryptoCurrencyListRepository {
+        return CryptoCurrencyListRepositoryImpl(Dispatchers.IO, apiService)
     }
 
     @Provides
